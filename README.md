@@ -1,1 +1,0 @@
-# huntcoin-shop.io
