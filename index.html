@@ -120,9 +120,9 @@
             <span class="close-button" onclick="closePopup()">x</span>
             <h3>Характеристики BitMiner 4356</h3>
             <ul>
-                <li>Производительность: 10 TH/s</li>
+                <li>Производительность: 100 MH/s</li>
                 <li>Потребление: 1500 Вт</li>
-                <li>Размеры: 30 x 20 x 10 см</li>
+                <li>Специализация: HTC</li>
             <!-- Добавьте другие характеристики -->
             </ul>
         </div>
@@ -132,16 +132,17 @@
         <div class="content">
             <h4>BitMiner 4400</h4>
             <a href="#" class="button-buy">Buy</a>
-            <a href="#" class="button-see" id="open-popup" >More</a>
+            <a href="#" class="button-see" id="open-popup1" >More</a>
             <p class="price">450 HTC</p>
         </div>
-        <div class="popup" id="popup-characteristics">
+        <div class="popup" id="popup-characteristics1">
             <span class="close-button" onclick="closePopup()">x</span>
+            <img src="https://www.optik-sk.ru/image/cache/catalog/9696476b3e068219aa1f65257b5d5c7b-400x400.jpg" alt="альтернативный текст">
             <h3>Характеристики BitMiner 4400</h3>
             <ul>
-                <li>Производительность: 10 TH/s</li>
-                <li>Потребление: 1500 Вт</li>
-                <li>Размеры: 30 x 20 x 10 см</li>
+                <li>Производительность: 500 MH/s</li>
+                <li>Потребление: 3500 Вт</li>
+                <li>Специализация: HTC</li>
             <!-- Добавьте другие характеристики -->
             </ul>
         </div>
@@ -155,8 +156,17 @@
             document.getElementById('popup-characteristics').style.display = 'none';
         }
 
+        function openPopup() {
+            document.getElementById('popup-characteristics1').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-characteristics1').style.display = 'none';
+        }
+
         // Привязываем функцию к кнопке "See more"
         document.getElementById('open-popup').addEventListener('click', openPopup);
+        document.getElementById('open-popup1').addEventListener('click', openPopup);
     </script>
 </body>
 </html>
