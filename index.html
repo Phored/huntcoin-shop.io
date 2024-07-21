@@ -13,43 +13,82 @@
       margin: 0;
     }
     .card {
-        width: 300px;
-        height: 250px;
+        width: 500px;
+        height: 100px;
+        background-color: #181816;
         color: #ddd;
+        display: flex;
+        flex-direction: column;
         border-radius: 15px;
         border: 2px solid #ddd;
         position: relative;
         overflow: hidden;
+        align-items: left;
     }
     .image_icon {
-        width: 100%;
-        height: 60%;
-        background:url('https://mining-center.net/wp-content/uploads/2018/08/photo_2018-08-15_11-38-26.png');
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px; 
+        background-image: url('https://cdn-icons-png.flaticon.com/512/2736/2736430.png'); /* Замените на URL вашей иконки */
         background-size: cover;
-        background-position: cover;
+        background-repeat: cover;  
     }
     .content {
         padding: 20px;
+        left: 30%;
+        display: flex;
+        align-items: center;
     }
     .price {
         font-size: 24px;
         margin: 10px 0;
         bottom: 50px;
     }
-    .button {
-        display: block;
-        width: 35%;
+    .button-container {
+        background-color: #666666;
+        display: flex;
+        text-align: center;
+        border-radius: 10px;
+        justify-content: center;
+        width: 350px;
+        position: fixed; 
+        align-items: center;
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .button-buy {
+        display: inline-block;
+        width: 50px;
         padding: 10px;
-        left: 32%;
+        left: auto;
+        margin-top: 10px;
         border-radius: 20px;
         background-color: #4caf50;
         color: white;
         text-align: center;
         text-decoration: none;
         margin: 0 auto;
-        position: relative;
-        bottom: 180px;
+        margin-right: 1px;
+        
     }
+    .button-see {
+        display: inline-block;
+        width: 50px;
+        padding: 10px;
+        left: auto;
+        margin-top: 10px;
+        border-radius: 20px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        margin: 0 auto;
+        margin-left: 10px;
+        
+    }
+    
+
 
 
 </style>
@@ -60,9 +99,11 @@
         <div class="image"></div>
         <div class="content">
             <h2>BitMiner 4356</h2>
-            <p>BitMiner 4356 is an affordable and easy-to-use miner, ideal for those just starting out in the world of cryptocurrency mining.</p>
-            <p class="price">250$</p>
-            <a href="#" class="button">Buy</a>
+            <div class="button-container"></div>
+                <a href="#" class="button-buy">Buy</a>
+                <a href="#" class="button-see">More</a>
+                <p class="price">250$</p>
+            
         </div>
     
     </div>
