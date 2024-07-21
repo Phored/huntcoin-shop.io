@@ -5,7 +5,6 @@
 <style>
     body {
       background:black;
-      display: flex;
       justify-content: none;
       align-items: center;
       min-height: 100vh;
@@ -24,6 +23,7 @@
         position: relative;
         overflow: hidden;
         align-items: left;
+        margin-bottom: 5px;
     }
     .image_icon {
         width: 20px;
@@ -85,7 +85,7 @@
         max-width: 500px; /* Ограничиваем ширину */
         background-color: white;
         padding: 20px;
-        color: #4caf50;
+        color: black;
         border-radius: 5px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Добавляем тень */
         z-index: 100; /* Помещаем всплывающее окно поверх других элементов */
@@ -121,9 +121,26 @@
                 <li>Размеры: 30 x 20 x 10 см</li>
             <!-- Добавьте другие характеристики -->
             </ul>
-        
         </div>
-    
+    </div>
+    <div class="card">
+        <div class="image"></div>
+        <div class="content">
+            <h4>BitMiner 4400</h4>
+            <a href="#" class="button-buy">Buy</a>
+            <a href="#" class="button-see" id="open-popup" >More</a>
+            <p class="price">450 HTC</p>
+        </div>
+        <div class="popup" id="popup-characteristics">
+            <span class="close-button" onclick="closePopup()">x</span>
+            <h3>Характеристики BitMiner 4400</h3>
+            <ul>
+                <li>Производительность: 10 TH/s</li>
+                <li>Потребление: 1500 Вт</li>
+                <li>Размеры: 30 x 20 x 10 см</li>
+            <!-- Добавьте другие характеристики -->
+            </ul>
+        </div>
     </div>
     <script>
         function openPopup() {
