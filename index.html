@@ -89,6 +89,7 @@
         background-color: white;
         padding: 20px;
         color: black;
+        text-align: left;
         border-radius: 5px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Добавляем тень */
         z-index: 100; /* Помещаем всплывающее окно поверх других элементов */
@@ -99,6 +100,26 @@
         right: 10px;
         cursor: pointer;
     }
+
+    .button-navigation {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-button {
+        background-color: #ccc;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        margin: 0 10px;
+
+    }
+    .nav-button.active{
+        background-color: #999;
+    }
+
+
     
 
 
@@ -107,7 +128,22 @@
 
 </head>
 <body>
+
     <h1><strong>Store</strong></h1>
+    <div class="button-navigation">
+        <div class="nav-button">
+            <button id="miners">
+                Miners
+            </button>
+            <button id="places">
+                Places
+            </button>
+            <button id="components">
+                Сomponents
+            </button>
+        </div>
+    </div>
+
     <div class="card">
         <div class="image-icon"></div>
         <div class="content">
@@ -118,15 +154,16 @@
         </div>
         <div class="popup" id="popup-characteristics">
             <span class="close-button" onclick="closePopup()">x</span>
+            <img width="80px" src="https://www.optik-sk.ru/image/cache/catalog/9696476b3e068219aa1f65257b5d5c7b-400x400.jpg" alt="альтернативный текст">
             <h3>Характеристики BitMiner 4356</h3>
             <ul>
                 <li>Производительность: 100 MH/s</li>
                 <li>Потребление: 1500 Вт</li>
                 <li>Специализация: HTC</li>
-            <!-- Добавьте другие характеристики -->
             </ul>
         </div>
     </div>
+
     <div class="card">
         <div class="image"></div>
         <div class="content">
@@ -136,17 +173,53 @@
             <p class="price">450 HTC</p>
         </div>
         <div class="popup" id="popup-characteristics1">
-            <span class="close-button" onclick="closePopup()">x</span>
-            <img width="80px" src="https://www.optik-sk.ru/image/cache/catalog/9696476b3e068219aa1f65257b5d5c7b-400x400.jpg" alt="альтернативный текст">
+            <span class="close-button" onclick="closePopup1()">x</span>
             <h3>Характеристики BitMiner 4400</h3>
             <ul>
                 <li>Производительность: 500 MH/s</li>
                 <li>Потребление: 3500 Вт</li>
                 <li>Специализация: HTC</li>
-            <!-- Добавьте другие характеристики -->
             </ul>
         </div>
     </div>
+
+    <div class="card">
+        <div class="content">
+            <h4>BitMiner 4560</h4>
+            <a href="#" class="button-buy">Buy</a>
+            <a href="#" class="button-see" id="open-popup2" >More</a>
+            <p class="price">1000 HTC</p>
+        </div>
+        <div class="popup" id="popup-characteristics2">
+            <span class="close-button" onclick="closePopup2()">x</span>
+            <h3>Характеристики BitMiner 4560</h3>
+            <ul>
+                <li>Производительность: 1000 MH/s</li>
+                <li>Потребление: 1500 Вт</li>
+                <li>Специализация: HTC</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content" id="mining-content">
+        <!-- Содержимое страницы "Майнинг" (фермы) -->
+        <h2>Фермы</h2>
+        <p>Здесь будет информация о фермах</p>
+      </div>
+    
+      <div class="content" id="place-content" style="display: none;">
+        <!-- Содержимое страницы "Место" (запчасти) -->
+        <h2>Место</h2>
+        <p>Здесь будет информация о запчастях</p>
+      </div>
+    
+      <div class="content" id="details-content" style="display: none;">
+        <!-- Содержимое страницы "Детали" (запчасти) -->
+        <h2>Детали</h2>
+        <p>Здесь будет информация о запчастях</p>
+      </div>
+    
+
+    
     <script>
         function openPopup() {
             document.getElementById('popup-characteristics').style.display = 'block';
@@ -156,17 +229,60 @@
             document.getElementById('popup-characteristics').style.display = 'none';
         }
 
-        function openPopup() {
+        function openPopup1() {
             document.getElementById('popup-characteristics1').style.display = 'block';
         }
 
-        function closePopup() {
+        function closePopup1() {
             document.getElementById('popup-characteristics1').style.display = 'none';
+        }
+
+        function openPopup2() {
+            document.getElementById('popup-characteristics2').style.display = 'block';
+        }
+
+        function closePopup2() {
+            document.getElementById('popup-characteristics2').style.display = 'none';
         }
 
         // Привязываем функцию к кнопке "See more"
         document.getElementById('open-popup').addEventListener('click', openPopup);
-        document.getElementById('open-popup1').addEventListener('click', openPopup);
+        document.getElementById('open-popup1').addEventListener('click', openPopup1);
+        document.getElementById('open-popup2').addEventListener('click', openPopup2);
+        
+        const miningButton = document.getElementById('miners');
+        const placeButton = document.getElementById('places');
+        const detailsButton = document.getElementById('components');
+        
+        const miningContent = document.getElementById('mining-content');
+        const placeContent = document.getElementById('place-content');
+        const detailsContent = document.getElementById('details-content');
+        
+        function switchContent(targetContentId) {
+  // Скрываем все страницы
+            miningContent.style.display = 'none';
+            placeContent.style.display = 'none';
+            detailsContent.style.display = 'none';
+
+  // Показываем целевую страницу
+            document.getElementById(targetContentId).style.display = 'block';
+
+  // Отмечаем активную кнопку
+            miningButton.classList.remove('active');
+            placeButton.classList.remove('active');
+            detailsButton.classList.remove('active');
+
+        document.getElementById(targetContentId.replace('-content', '-button')).classList.add('active');
+    }   
+
+        miningButton.addEventListener('click', () => switchContent('mining-content'));
+        placeButton.addEventListener('click', () => switchContent('place-content'));
+        detailsButton.addEventListener('click', () => switchContent('details-content'));
+
+// Изначально показываем страницу "Майнинг"
+switchContent('mining-content'); 
+
+    
     </script>
 </body>
 </html>
