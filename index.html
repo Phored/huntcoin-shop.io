@@ -28,17 +28,11 @@
         align-items: left;
         margin-bottom: 5px;
     }
-    .image-icon {
-        width: 20px;
-        height: 20px;
-        margin-bottom: 5px; 
-        background-image: url('https://cdn-icons-png.flaticon.com/512/2736/2736430.png'); /* Замените на URL вашей иконки */
-        background-size: cover;
-        background-repeat: cover;  
-    }
+
     .content {
+        font-size: 16px;
         padding: 20px;
-        left: 30%;
+        left: 20%;
         display: flex;
         align-items: center;
         
@@ -103,6 +97,7 @@
     }
 
     .button-navigation {
+      border-radius: 15px;
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
@@ -110,12 +105,14 @@
 
     .nav-button {
         background-color: #ccc;
+        border-radius: 45px;
         color: black;
         padding: 10px 20px;
         border: none;
         margin: 0 10px;
 
     }
+    .button
     .nav-button.active{
         background-color: #999;
     }
@@ -201,6 +198,45 @@
             </ul>
         </div>
     </div>
+    
+    <div class="card">
+        <div class="content">
+            <h4>HTCMiner 1100</h4>
+            <a href="#" class="button-buy">Buy</a>
+            <a href="#" class="button-see" id="open-popup3" >More</a>
+            <p class="price">2000 HTC</p>
+        </div>
+        <div class="popup" id="popup-characteristics3">
+            <span class="close-button" onclick="closePopup3()">x</span>
+            <img width="80px" src="https://www.optik-sk.ru/image/cache/catalog/9696476b3e068219aa1f65257b5d5c7b-400x400.jpg" alt="альтернативный текст">
+            <h3>Характеристики BitMiner 4356</h3>
+            <ul>
+                <li>Производительность: 3500 MH/s</li>
+                <li>Потребление: 4000 Вт</li>
+                <li>Специализация: HTC</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image-icon"></div>
+        <div class="content">
+            <h4>BitMiner 4356</h4>
+            <a href="#" class="button-buy">Buy</a>
+            <a href="#" class="button-see" id="open-popup" >More</a>
+            <p class="price">250 HTC</p>
+        </div>
+        <div class="popup" id="popup-characteristics">
+            <span class="close-button" onclick="closePopup()">x</span>
+            <img width="80px" src="https://www.optik-sk.ru/image/cache/catalog/9696476b3e068219aa1f65257b5d5c7b-400x400.jpg" alt="альтернативный текст">
+            <h3>Характеристики BitMiner 4356</h3>
+            <ul>
+                <li>Производительность: 100 MH/s</li>
+                <li>Потребление: 1500 Вт</li>
+                <li>Специализация: HTC</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="content" id="mining-content">
         <!-- Содержимое страницы "Майнинг" (фермы) -->
         <h2>Фермы</h2>
@@ -244,6 +280,14 @@
 
         function closePopup2() {
             document.getElementById('popup-characteristics2').style.display = 'none';
+        }
+
+        function openPopup3() {
+            document.getElementById('popup-characteristics3').style.display = 'block';
+        }
+
+        function closePopup3() {
+            document.getElementById('popup-characteristics3').style.display = 'none';
         }
 
         // Привязываем функцию к кнопке "See more"
