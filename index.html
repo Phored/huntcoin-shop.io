@@ -188,11 +188,10 @@
     }, 3000);
 
 <!--обработчик на кнопку  shop-->
-const shopButton = document.getElementById('shop');
-
-shopButton.addEventListener('click', () => {
-  window.location.href = 'shop.html'; // Переход на shop.html
-});
+const myButton = document.getElementById('shop');
+      myButton.onclick = function() {
+        window.location.href = 'shop.html';
+      };
 
 
 const myButton = document.getElementById('wallet');
